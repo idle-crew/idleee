@@ -3,14 +3,20 @@ import IconLogo from "../../../icons/IconLogo";
 import { Storage } from "../../../apis/storage/storage";
 import Profile from "../Profile/Profile";
 import LoginButton from "../LoginButton/LoginButton";
+import { useNavigate } from "react-router-dom";
 
 const Header = () => {
   const token = Storage.getItem("access-token");
+  const navigate = useNavigate();
+
+  const handleLogoClick = () => {
+    navigate("/");
+  };
 
   return (
     <StyledHeader>
       <IconWrapper>
-        <IconLogo width={63} height={28} />
+        <IconLogo width={63} height={28} onClick={handleLogoClick} />
       </IconWrapper>
       <ProfileWrapper>{token ? <Profile /> : <LoginButton />}</ProfileWrapper>
     </StyledHeader>
