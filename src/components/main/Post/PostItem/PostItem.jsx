@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
-const PostItem = () => {
+const PostItem = ({ onClick }) => {
   return (
-    <StyledPostItem>
+    <StyledPostItem onClick={onClick}>
       <StyledImage />
       <StyledTitle>마루</StyledTitle>
       <Wrapper>
