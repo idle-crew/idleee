@@ -13,7 +13,15 @@ const Header = () => {
       <IconWrapper to="/">
         <IconLogo width={63} height={28} />
       </IconWrapper>
-      <ProfileWrapper>{token ? <Profile /> : <LoginButton />}</ProfileWrapper>
+      {token ? (
+        <ProfileWrapper>
+          <Profile />{" "}
+        </ProfileWrapper>
+      ) : (
+        <LoginWrapper>
+          <LoginButton />
+        </LoginWrapper>
+      )}
     </StyledHeader>
   );
 };
@@ -29,7 +37,6 @@ const StyledHeader = styled.div`
   box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.1);
   display: flex;
   align-items: center;
-  justify-content: space-between;
   position: fixed;
   padding: 0 120px;
   max-width: 1440px;
@@ -44,4 +51,11 @@ const IconWrapper = styled(Link)`
 const ProfileWrapper = styled.div`
   display: flex;
   align-items: center;
+  margin-left: 70%;
+`;
+
+const LoginWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  margin-left: 80%;
 `;
