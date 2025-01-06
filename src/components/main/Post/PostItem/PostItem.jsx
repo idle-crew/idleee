@@ -6,7 +6,7 @@ const PostItem = ({ onClick }) => {
       <StyledImage />
       <StyledTitle>마루</StyledTitle>
       <Wrapper>
-        <StyledCost>900원</StyledCost>
+        <StyledCost>900,000,000원</StyledCost>
         <StyledDiscussion>협의 가능</StyledDiscussion>
       </Wrapper>
       <StyledCondition>N빵</StyledCondition>
